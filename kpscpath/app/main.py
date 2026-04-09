@@ -8,6 +8,7 @@ from app.core.response import error_response
 from app.modules.auth.router import router as auth_router
 from app.modules.onboarding.router import router as onboarding_router
 from app.modules.syllabus.router import router as syllabus_router
+from app.modules.ai.router import router as ai_router
 
 
 
@@ -49,6 +50,7 @@ async def app_error_handler(request: Request, exc: AppError):
 app.include_router(auth_router, prefix="/api/v1")
 app.include_router(onboarding_router, prefix="/api/v1")
 app.include_router(syllabus_router, prefix="/api/v1")
+app.include_router(ai_router, prefix="/api/v1")
 # ---------------------------------------------------------------------------
 # Health check
 # ---------------------------------------------------------------------------
